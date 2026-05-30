@@ -18,7 +18,7 @@ public class Usertest {
     faker=new Faker();
     userPayload=new User();
     userPayload.setId(faker.idNumber().hashCode());
-    userPayload.setFirstname(faker.name().username());
+    userPayload.setUsername(faker.name().username());
     userPayload.setFirstname(faker.name().firstName());
     userPayload.setLastname(faker.name().lastName());
     userPayload.setEmail(faker.internet().safeEmailAddress());
@@ -59,6 +59,7 @@ public class Usertest {
        Assert.assertEquals(responseafterupdate.getStatusCode(),200);
    }
 
+   @Test(priority = 4)
    public void testdeleteUserbyname()
    {
        Response response = Userendpoint.deleteUser(this.userPayload.getUsername());
@@ -68,3 +69,4 @@ public class Usertest {
 
    }
 }
+C:\Users\Shubhangi\IdeaProjects\Hellow world\PetstroreAutomation
